@@ -1,0 +1,694 @@
+/* CODECANVAS STAGE 4 — EDITOR WORKSPACE */
+
+.code-editor-workspace {
+  width: 100%;
+  margin: 34px 0 70px;
+  border: 1px solid rgba(142, 161, 202, 0.18);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0c1221;
+  box-shadow: 0 25px 80px #0003;
+}
+
+.cc-editor-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff04;
+  flex-wrap: wrap;
+}
+
+.cc-back-button,
+.cc-tool-button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff06;
+  color: #dce5f8;
+  padding: 10px 12px;
+  font:
+    600 11px Manrope,
+    sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cc-back-button:hover,
+.cc-tool-button:hover {
+  border-color: #62e7f45c;
+  color: var(--cyan);
+}
+
+.cc-editor-project-title {
+  flex: 1;
+  min-width: 150px;
+}
+
+.cc-eyebrow {
+  display: block;
+  color: var(--cyan);
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 1.4px;
+  margin-bottom: 6px;
+}
+
+#editor-project-name {
+  width: min(100%, 420px);
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #f0f4ff;
+  font:
+    800 20px Manrope,
+    sans-serif;
+  letter-spacing: -0.6px;
+}
+
+#editor-project-name:focus {
+  box-shadow: 0 1px var(--cyan);
+}
+
+.cc-editor-actions,
+.cc-preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cc-primary-tool {
+  background: linear-gradient(110deg, #69e9f1, #a6c5ff);
+  color: #09121d;
+  border-color: transparent;
+}
+
+.cc-save-status {
+  font:
+    10px "DM Mono",
+    monospace;
+  color: var(--muted);
+  padding: 0 4px;
+}
+
+.cc-save-status.is-saved {
+  color: var(--green);
+}
+
+.cc-save-status.is-saving {
+  color: #f3d48a;
+}
+
+.cc-save-status.is-error {
+  color: #ff9eae;
+}
+
+.cc-workbench {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  min-height: 460px;
+}
+
+.cc-editor-sidebar {
+  padding: 17px 10px;
+  border-right: 1px solid var(--line);
+  background: #080d18;
+}
+
+.cc-sidebar-label {
+  display: block;
+  padding: 0 9px 17px;
+  color: #6f7d99;
+  font:
+    9px "DM Mono",
+    monospace;
+  letter-spacing: 1.3px;
+}
+
+.cc-sidebar-project {
+  padding: 8px 9px;
+  color: #cbd6ec;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.cc-file-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10px 9px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #9caac5;
+  text-align: left;
+  font:
+    11px "DM Mono",
+    monospace;
+  cursor: pointer;
+}
+
+.cc-file-button.active {
+  background: #62e7f414;
+  color: #e8f8ff;
+}
+
+.cc-file-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  font-size: 11px;
+}
+
+.cc-html-icon {
+  color: #f2a16e;
+}
+
+.cc-css-icon {
+  color: #80a8ff;
+}
+
+.cc-js-icon {
+  color: #e8d67d;
+  font-size: 9px;
+}
+
+.cc-sidebar-tip {
+  margin: 30px 8px 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: #66738e;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.cc-editor-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #101726;
+}
+
+.cc-editor-tabs {
+  display: flex;
+  gap: 2px;
+  min-height: 43px;
+  overflow: auto;
+  border-bottom: 1px solid var(--line);
+  background: #0c1220;
+}
+
+.cc-editor-tab {
+  flex-shrink: 0;
+  padding: 0 15px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #8290aa;
+  font:
+    11px "DM Mono",
+    monospace;
+  cursor: pointer;
+}
+
+.cc-editor-tab.active {
+  border-bottom-color: var(--cyan);
+  background: #62e7f409;
+  color: #e5efff;
+}
+
+.cc-monaco-container {
+  position: relative;
+  min-height: 415px;
+  height: clamp(415px, 56vh, 720px);
+  overflow: hidden;
+}
+
+.cc-monaco-container .monaco-editor {
+  position: absolute;
+  inset: 0;
+}
+
+.cc-editor-statusbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 12px;
+  background: #19263a;
+  color: #9daec9;
+  font:
+    9px "DM Mono",
+    monospace;
+  flex-wrap: wrap;
+}
+
+.cc-preview-section {
+  border-top: 1px solid var(--line);
+  padding: 22px;
+  background: #0a101e;
+}
+
+.cc-preview-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 14px;
+}
+
+.cc-preview-heading h3 {
+  margin: 0;
+  color: #eef2ff;
+  font-size: 20px;
+  letter-spacing: -0.6px;
+}
+
+.cc-preview-actions > span {
+  color: var(--muted);
+  font:
+    10px "DM Mono",
+    monospace;
+}
+
+.cc-preview-frame-wrap {
+  height: 350px;
+  overflow: hidden;
+  border: 1px solid rgba(142, 161, 202, 0.22);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.cc-preview-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.cc-console-panel {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #080d18;
+  overflow: hidden;
+}
+
+.cc-console-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 13px;
+  border-bottom: 1px solid var(--line);
+  color: #dce5f8;
+  font:
+    11px "DM Mono",
+    monospace;
+}
+
+.cc-console-heading button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.cc-console-output {
+  max-height: 160px;
+  min-height: 54px;
+  overflow: auto;
+  padding: 10px 12px;
+  color: #b9c6df;
+  font:
+    11px/1.7 "DM Mono",
+    monospace;
+}
+
+.cc-console-placeholder {
+  color: #65718b;
+}
+
+.cc-console-line {
+  display: flex;
+  gap: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 2px 0;
+}
+
+.cc-console-level {
+  flex-shrink: 0;
+  color: #7da5d9;
+  font-size: 9px;
+}
+
+.cc-console-warn .cc-console-level {
+  color: #f1d17c;
+}
+
+.cc-console-error .cc-console-level {
+  color: #ff8f9e;
+}
+
+.cc-editor-message {
+  margin: 0 20px 18px;
+  padding: 11px 13px;
+  border: 1px solid rgba(255, 110, 130, 0.3);
+  border-radius: 9px;
+  background: #ff506410;
+  color: #ffadb8;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.cc-editor-message.success {
+  border-color: #44dcaa44;
+  background: #44dcaa0d;
+  color: #83f0ca;
+}
+
+@media (max-width: 760px) {
+  .cc-editor-heading {
+    align-items: flex-start;
+  }
+
+  .cc-editor-project-title {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .cc-editor-actions {
+    margin-left: auto;
+  }
+
+  .cc-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-editor-sidebar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+  }
+
+  .cc-sidebar-label,
+  .cc-sidebar-tip,
+  .cc-sidebar-project {
+    display: none;
+  }
+
+  .cc-file-button {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .cc-monaco-container {
+    height: 55vh;
+    min-height: 340px;
+  }
+
+  .cc-preview-section {
+    padding: 15px;
+  }
+
+  .cc-preview-frame-wrap {
+    height: 300px;
+  }
+
+  .cc-preview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .cc-editor-heading {
+    padding: 13px;
+  }
+
+  .cc-editor-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .cc-back-button,
+  .cc-tool-button {
+    font-size: 10px;
+  }
+
+  .cc-tool-button {
+    padding: 9px 10px;
+  }
+
+  .cc-editor-tab {
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .cc-monaco-container {
+    min-height: 320px;
+  }
+
+  .cc-preview-frame-wrap {
+    height: 260px;
+  }
+
+  .cc-editor-statusbar {
+    font-size: 8px;
+  }
+}
+/* CODECANVAS — FULLSCREEN SPLIT WORKSPACE */
+
+body:has(#code-editor-workspace:not(.hidden)) {
+  overflow: hidden;
+}
+
+#signed-in-panel:has(#code-editor-workspace:not(.hidden)) {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+#code-editor-workspace:not(.hidden) {
+  position: fixed;
+  inset: 68px 0 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100dvh - 68px);
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #0c1221;
+}
+
+#code-editor-workspace:not(.hidden) .cc-editor-heading {
+  flex-shrink: 0;
+  gap: 12px;
+  padding: 12px 18px;
+}
+
+#code-editor-workspace:not(.hidden) .cc-workbench {
+  flex: 1;
+  min-height: 0;
+  grid-template-columns: 190px minmax(0, 1fr);
+  overflow: hidden;
+}
+
+#code-editor-workspace:not(.hidden) .cc-editor-sidebar,
+#code-editor-workspace:not(.hidden) .cc-editor-main {
+  min-height: 0;
+  overflow: hidden;
+}
+
+#code-editor-workspace:not(.hidden) .cc-editor-main {
+  display: flex;
+  flex-direction: column;
+}
+
+#code-editor-workspace:not(.hidden) .cc-monaco-container {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-section {
+  flex-shrink: 0;
+  max-height: 40%;
+  overflow: auto;
+  padding: 12px 18px;
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-heading {
+  margin-bottom: 10px;
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-heading h3 {
+  font-size: 16px;
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-frame-wrap {
+  height: 220px;
+}
+
+#code-editor-workspace:not(.hidden) .cc-console-output {
+  min-height: 36px;
+  max-height: 90px;
+}
+
+@media (max-width: 760px) {
+  #code-editor-workspace:not(.hidden) {
+    inset: 60px 0 0;
+    height: calc(100dvh - 60px);
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-editor-sidebar {
+    max-height: 65px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-monaco-container {
+    min-height: 220px;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-preview-section {
+    max-height: 35%;
+    padding: 10px;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-preview-frame-wrap {
+    height: 150px;
+  }
+}
+
+/* ========================================
+   CODECANVAS — SPLIT EDITOR & LIVE PREVIEW
+======================================== */
+
+#code-editor-workspace:not(.hidden) .cc-split-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#code-editor-workspace:not(.hidden) .cc-workbench {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#code-editor-workspace:not(.hidden) .cc-editor-sidebar,
+#code-editor-workspace:not(.hidden) .cc-editor-main {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#code-editor-workspace:not(.hidden) .cc-editor-main {
+  display: flex;
+  flex-direction: column;
+}
+
+#code-editor-workspace:not(.hidden) .cc-editor-tabs,
+#code-editor-workspace:not(.hidden) .cc-editor-statusbar {
+  flex-shrink: 0;
+}
+
+#code-editor-workspace:not(.hidden) .cc-monaco-container {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-section {
+  min-width: 0;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  border-top: 0;
+  border-left: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-frame-wrap {
+  height: clamp(220px, 42vh, 440px);
+}
+
+#code-editor-workspace:not(.hidden) .cc-preview-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#code-editor-workspace:not(.hidden) .cc-console-output {
+  max-height: 180px;
+  overflow: auto;
+}
+
+#code-editor-workspace.cc-preview-hidden .cc-split-workspace {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+#code-editor-workspace.cc-preview-hidden .cc-preview-section {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  #code-editor-workspace:not(.hidden) .cc-split-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(300px, 1fr) minmax(240px, 0.8fr);
+    overflow: auto;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-workbench {
+    min-height: 350px;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-preview-section {
+    border-left: 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+  }
+}
+
+@media (max-width: 600px) {
+  #code-editor-workspace:not(.hidden) .cc-workbench {
+    grid-template-columns: 1fr;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-editor-sidebar {
+    max-height: 85px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-editor-heading {
+    flex-wrap: wrap;
+  }
+
+  #code-editor-workspace:not(.hidden) .cc-preview-frame-wrap {
+    height: 220px;
+  }
+}

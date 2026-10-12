@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090d19" />
+    <meta
+      name="description"
+      content="CodeCanvas — your browser-based coding studio."
+    />
+    <title>CodeCanvas — Developer Studio</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark">&lt;/&gt;</span>
+          <span>Code<span class="brand-accent">Canvas</span></span>
+        </a>
+
+        <div class="topbar-status">
+          <span class="status-dot"></span>
+          <span id="connection-status">Connecting to local API…</span>
+        </div>
+
+        <div class="account-actions">
+          <span id="account-status">Guest</span>
+          <button class="button button-small" id="open-login" type="button">
+            Sign in
+          </button>
+          <button
+            class="button button-small button-primary"
+            id="open-register"
+            type="button"
+          >
+            Create account
+          </button>
+          <button
+            class="button button-small hidden"
+            id="logout-button"
+            type="button"
+          >
+            Log out
+          </button>
+        </div>
+      </header>
+
+      <main class="hero">
+        <section class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            YOUR BROWSER. YOUR WORKSPACE.
+          </div>
+
+          <h1>
+            Ideas become<br /><span class="gradient-text">working code.</span>
+          </h1>
+
+          <p class="hero-description">
+            A focused space to write, experiment, and bring web ideas to life.
+            CodeCanvas is being assembled one solid layer at a time.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#workspace">
+              Explore workspace <span>↘</span>
+            </a>
+            <span class="build-note">
+              <span class="status-dot"></span> Stage 2 · Authentication
+            </span>
+          </div>
+
+          <div class="feature-strip">
+            <div>
+              <span class="feature-icon cyan">⌘</span>
+              <span
+                ><strong>Web-native</strong><small>HTML · CSS · JS</small></span
+              >
+            </div>
+            <div>
+              <span class="feature-icon purple">◈</span>
+              <span
+                ><strong>Live workspace</strong
+                ><small>Built for iteration</small></span
+              >
+            </div>
+            <div>
+              <span class="feature-icon green">↗</span>
+              <span
+                ><strong>Made to grow</strong
+                ><small>Full-stack foundation</small></span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="studio-card" id="workspace">
+          <div class="studio-header">
+            <div class="window-controls"><i></i><i></i><i></i></div>
+            <span class="studio-title">codecanvas / workspace</span>
+            <span class="studio-badge">FOUNDATION</span>
+          </div>
+
+          <div class="studio-body">
+            <aside class="file-rail">
+              <span class="rail-label">FILES</span>
+              <div class="file-item active">
+                <b class="html">5</b> index.html
+              </div>
+              <div class="file-item"><b class="css">#</b> style.css</div>
+              <div class="file-item"><b class="js">JS</b> script.js</div>
+              <hr />
+              <div class="file-item muted">⌄ assets</div>
+            </aside>
+
+            <div class="code-preview">
+              <div class="editor-tabs">
+                <span class="editor-tab selected">◧ index.html</span>
+                <span class="editor-tab"># style.css</span>
+                <span class="editor-tab">JS script.js</span>
+              </div>
+
+              <div class="code-lines">
+                <div>
+                  <i>1</i> <span class="purple">&lt;main</span>
+                  <span class="cyan">class</span>=<span class="green"
+                    >"canvas"</span
+                  ><span class="purple">&gt;</span>
+                </div>
+                <div>
+                  <i>2</i> &nbsp; <span class="purple">&lt;h1&gt;</span>Hello,
+                  creator<span class="purple">&lt;/h1&gt;</span>
+                </div>
+                <div>
+                  <i>3</i> &nbsp; <span class="purple">&lt;p&gt;</span>Build
+                  something new.<span class="purple">&lt;/p&gt;</span>
+                </div>
+                <div><i>4</i> <span class="purple">&lt;/main&gt;</span></div>
+                <div><i>5</i></div>
+                <div class="comment">
+                  <i>6</i> // Your next idea starts here.
+                </div>
+                <div>
+                  <i>7</i> <span class="purple">const</span>
+                  <span class="cyan">canvas</span> =
+                  <span class="green">"ready"</span>;
+                </div>
+              </div>
+
+              <div class="preview-panel">
+                <div class="preview-toolbar">
+                  <span><span class="status-dot"></span> PREVIEW</span>
+                  <span>LOCAL MOCKUP</span>
+                </div>
+                <div class="preview-content">
+                  <span class="preview-kicker">A SMALL STEP</span>
+                  <strong>Your idea,<br />taking shape.</strong>
+                  <span class="preview-underline"></span>
+                  <span class="orb"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="studio-footer">
+            <span><span class="status-dot"></span> Foundation UI loaded</span>
+            <span>HTML / CSS / JS</span>
+          </div>
+        </section>
+      </main>
+
+      <section class="status-section">
+        <div class="section-heading">
+          <span>01 / FOUNDATION</span>
+          <h2>A strong base before the features.</h2>
+        </div>
+
+        <div class="status-grid">
+          <article class="status-card">
+            <span class="status-number">01</span>
+            <h3>App structure</h3>
+            <p>
+              Frontend and backend are separated and ready to develop
+              independently.
+            </p>
+            <span class="status-label ready">SCAFFOLDED</span>
+          </article>
+
+          <article class="status-card">
+            <span class="status-number">02</span>
+            <h3>API gateway</h3>
+            <p>
+              A health endpoint and controlled development connection are in
+              place.
+            </p>
+            <span class="status-label ready">CONNECTED</span>
+          </article>
+
+          <article class="status-card">
+            <span class="status-number">03</span>
+            <h3>Account system</h3>
+            <p>
+              Registration, login, sessions, and logout are being connected.
+            </p>
+            <span class="status-label pending">STAGE 2</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="auth-section" id="account">
+        <div class="section-heading">
+          <span>02 / YOUR ACCOUNT</span>
+          <h2>Your workspace starts here.</h2>
+        </div>
+
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button class="auth-tab active" type="button" data-auth-tab="login">
+              Sign in
+            </button>
+            <button class="auth-tab" type="button" data-auth-tab="register">
+              Create account
+            </button>
+          </div>
+
+          <div
+            id="auth-message"
+            class="auth-message hidden"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+          <form id="login-form" class="auth-form">
+            <h3>Welcome back.</h3>
+            <p>Sign in to continue to CodeCanvas.</p>
+
+            <label for="login-identifier">Username or email</label>
+            <input
+              id="login-identifier"
+              name="identifier"
+              type="text"
+              autocomplete="username"
+              maxlength="254"
+              required
+            />
+
+            <label for="login-password">Password</label>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              maxlength="72"
+              required
+            />
+
+            <button class="button button-primary auth-submit" type="submit">
+              Sign in
+            </button>
+          </form>
+
+          <form id="register-form" class="auth-form hidden">
+            <h3>Create your account.</h3>
+            <p>Your coding workspace, ready to grow.</p>
+
+            <label for="register-username">Username</label>
+            <input
+              id="register-username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              minlength="3"
+              maxlength="30"
+              pattern="[A-Za-z0-9_]{3,30}"
+              required
+            />
+            <small>3–30 characters: letters, numbers, and underscore.</small>
+
+            <label for="register-email">Email</label>
+            <input
+              id="register-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+              required
+            />
+
+            <label for="register-password">Password</label>
+            <input
+              id="register-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              minlength="8"
+              maxlength="72"
+              required
+            />
+            <small>Use at least 8 characters.</small>
+
+            <button class="button button-primary auth-submit" type="submit">
+              Create account
+            </button>
+          </form>
+
+          <div id="signed-in-panel" class="signed-in-panel hidden">
+            <span class="account-avatar" id="account-avatar">C</span>
+            <h3 id="welcome-heading">You're signed in.</h3>
+            <p id="welcome-description"></p>
+            <p class="muted-note">
+              Project dashboard will be added in Stage 3.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>CodeCanvas <b>v0.2.0</b></span>
+        <span>Built one layer at a time.</span>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
